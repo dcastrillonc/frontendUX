@@ -11,7 +11,7 @@ interface SidebarItem {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
   readonly navItems: SidebarItem[] = [

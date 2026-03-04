@@ -6,19 +6,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
 
-  &__calendar-wrap {
-    width: min(680px, 100%);
-  }
+.month-view__calendar-wrap {
+  width: min(680px, 100%);
+}
 
-  &__actions {
-    margin-top: auto;
-    padding: clamp(8px, 2vh, 24px) 0 clamp(8px, 2vh, 24px);
-    display: flex;
-    gap: clamp(16px, 3vw, 42px);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.month-view__actions {
+  margin-top: auto;
+  padding: clamp(8px, 2vh, 24px) 0 clamp(8px, 2vh, 24px);
+  display: flex;
+  gap: clamp(16px, 3vw, 42px);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 860px) {

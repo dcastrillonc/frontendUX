@@ -7,7 +7,7 @@ import { TopbarComponent } from '@core/layout/topbar/topbar.component';
   standalone: true,
   imports: [SidebarComponent, TopbarComponent],
   templateUrl: './app-shell.component.html',
-  styleUrl: './app-shell.component.scss'
+  styleUrl: './app-shell.component.css'
 })
 export class AppShellComponent {
   @Input({ required: true }) title!: string;

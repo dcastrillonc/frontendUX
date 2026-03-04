@@ -10,39 +10,39 @@
   justify-content: center;
   gap: clamp(24px, 4vw, 44px);
   margin-bottom: clamp(16px, 3vh, 36px);
+}
 
-  h2 {
-    width: 62.05px;
-    height: 28px;
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    color: #1f2937;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0;
-  }
+.month-nav h2 {
+  width: 62.05px;
+  height: 28px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #1f2937;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0;
+}
 
-  &__arrow {
-    border: 0;
-    background: transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0;
+.month-nav__arrow {
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
 
-    img {
-      width: 16px;
-      height: 16px;
-      display: block;
-    }
-  }
+.month-nav__arrow img {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 .week-days {
@@ -51,26 +51,26 @@
   grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   margin: 0 auto clamp(8px, 1.5vh, 16px);
+}
 
-  span {
-    width: 12.39px;
-    height: 16px;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #9ca3af;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
+.week-days span {
+  width: 12.39px;
+  height: 16px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .month-grid {
@@ -93,10 +93,10 @@
   justify-content: center;
   align-items: center;
   gap: 6px;
+}
 
-  &--muted {
-    background: #f9fafb;
-  }
+.day-cell--muted {
+  background: #f9fafb;
 }
 
 .day-number {
@@ -115,12 +115,12 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
 
-  &--muted {
-    min-width: 19.69px;
-    font-weight: 400;
-    color: #9ca3af;
-  }
+.day-number--muted {
+  min-width: 19.69px;
+  font-weight: 400;
+  color: #9ca3af;
 }
 
 .alarm-dot {

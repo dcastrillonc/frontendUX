@@ -7,7 +7,7 @@ import { CalendarDay } from '@shared/models/calendar-day.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './month-calendar.component.html',
-  styleUrl: './month-calendar.component.scss'
+  styleUrl: './month-calendar.component.css'
 })
 export class MonthCalendarComponent {
   @Input({ required: true }) monthLabel!: string;

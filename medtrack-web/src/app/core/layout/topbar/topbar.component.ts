@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-topbar',
   standalone: true,
   templateUrl: './topbar.component.html',
-  styleUrl: './topbar.component.scss'
+  styleUrl: './topbar.component.css'
 })
 export class TopbarComponent {
   @Input({ required: true }) title!: string;

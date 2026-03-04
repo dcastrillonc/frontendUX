@@ -9,7 +9,7 @@ import { CalendarDay } from '@shared/models/calendar-day.model';
   standalone: true,
   imports: [AppShellComponent, MonthCalendarComponent, OutlinedActionButtonComponent],
   templateUrl: './month-alarms-page.component.html',
-  styleUrl: './month-alarms-page.component.scss'
+  styleUrl: './month-alarms-page.component.css'
 })
 export class MonthAlarmsPageComponent {
   readonly weekDays = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
