@@ -1,0 +1,40 @@
+.action-btn {
+  min-width: 206px;
+  height: 42px;
+  border-radius: 9px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.action-btn__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 144px;
+  height: 20px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #38b7c8;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0;
+}
+
+.action-btn__icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}

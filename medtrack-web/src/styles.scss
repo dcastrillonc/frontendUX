@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --page-bg: #f4f4f4;
+  --panel-bg: #ffffff;
+  --line: #f3f3f2;
+  --text-primary: #1f2637;
+  --text-secondary: #526077;
+  --text-muted: #99a2b2;
+  --accent: #3db4c6;
+  --day-cell: #ececec;
+  --day-cell-muted: #efefef;
+  --font-main: 'Nunito Sans', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-main);
+  color: var(--text-primary);
+  background: var(--page-bg);
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}

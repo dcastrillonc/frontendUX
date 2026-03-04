@@ -1,0 +1,12 @@
+<app-shell title="Alarmas del mes">
+  <section class="month-view">
+    <div class="month-view__calendar-wrap">
+      <app-month-calendar [monthLabel]="'Marzo'" [weekDays]="weekDays" [days]="monthDays"></app-month-calendar>
+    </div>
+
+    <div class="month-view__actions">
+      <app-outlined-action-button label="Filtrar" icon="filter.svg"></app-outlined-action-button>
+      <app-outlined-action-button label="Descargar historial" icon="download.svg"></app-outlined-action-button>
+    </div>
+  </section>
+</app-shell>

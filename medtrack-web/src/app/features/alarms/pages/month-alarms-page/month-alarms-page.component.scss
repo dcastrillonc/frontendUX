@@ -1,0 +1,28 @@
+.month-view {
+  height: calc(100vh - 71px);
+  overflow: hidden;
+  padding: clamp(16px, 4vh, 48px) 24px clamp(12px, 3vh, 32px);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__calendar-wrap {
+    width: min(680px, 100%);
+  }
+
+  &__actions {
+    margin-top: auto;
+    padding: clamp(8px, 2vh, 24px) 0 clamp(8px, 2vh, 24px);
+    display: flex;
+    gap: clamp(16px, 3vw, 42px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .month-view {
+    padding: 24px 16px;
+  }
+}

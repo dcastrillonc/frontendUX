@@ -1,0 +1,20 @@
+<div class="month-nav">
+  <button type="button" class="month-nav__arrow" aria-label="Mes anterior">
+    <img src="/assets/arrow-left.svg" alt="" aria-hidden="true" />
+  </button>
+  <h2>{{ monthLabel }}</h2>
+  <button type="button" class="month-nav__arrow" aria-label="Mes siguiente">
+    <img src="/assets/arrow-right.svg" alt="" aria-hidden="true" />
+  </button>
+</div>
+
+<div class="week-days">
+  <span *ngFor="let day of weekDays">{{ day }}</span>
+</div>
+
+<div class="month-grid">
+  <div class="day-cell" *ngFor="let day of days; trackBy: trackByIndex" [class.day-cell--muted]="day.muted">
+    <span class="day-number" [class.day-number--muted]="day.muted">{{ day.value }}</span>
+    <img *ngIf="day.hasAlarm" class="alarm-dot" src="/assets/alarm.svg" alt="" aria-hidden="true" />
+  </div>
+</div>
