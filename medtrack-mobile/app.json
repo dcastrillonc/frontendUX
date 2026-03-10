@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "MedTrack+",
+    "slug": "medtrack-mobile",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "medtrack",
+    "plugins": [
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
+        }
+      ]
+    ],
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.anonymous.medtrack-mobile"
+    },
+    "android": {
+      "package": "com.anonymous.medtrackmobile"
+    }
+  }
+}
