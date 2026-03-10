@@ -13,7 +13,7 @@ Maquetación frontend de la aplicación web y mobile de alarmas de medicamentos.
 ## Web (Angular)
 
 ### Requisitos
-Instala lo siguiente en tu equipo para trabajar con Angular:
+Instala lo siguiente en tu equipo para iniciar la aplicación web:
 
 1. `Node.js` en una versión compatible con Angular (https://nodejs.org/en/download).
 2. `npm` (ya viene con Node).
@@ -61,4 +61,42 @@ Angular levantará la app normalmente en
 `http://localhost:4200/`
 
 ## Mobile (React Native)
-Pendiente de configuración en este repositorio.
+
+### Requisitos
+Instala lo siguiente en tu equipo para iniciar la aplicación mobile:
+
+1. `Node.js` (https://nodejs.org/en/download).
+2. `npm`.
+3. Android Studio o Xcode si se va a usar emulador/simulador.
+
+### Instalación del proyecto
+Desde la raíz del repositorio
+
+```bash
+source ~/.nvm/nvm.sh
+nvm use 22
+cd medtrack-mobile
+npm install
+```
+
+### Ejecutar proyecto con Metro
+```bash
+cd medtrack-mobile
+npm start
+```
+
+Esto levanta Metro para la app mobile.
+
+En otra terminal:
+
+```bash
+cd medtrack-mobile
+npm run android
+```
+
+o en iOS:
+
+```bash
+cd medtrack-mobile
+npm run ios
+```

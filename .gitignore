@@ -29,6 +29,11 @@ out-tsc/
 android/.gradle/
 android/app/build/
 ios/build/
+medtrack-mobile/.expo/
+medtrack-mobile/android/.gradle/
+medtrack-mobile/android/app/build/
+medtrack-mobile/android/.cxx/
+medtrack-mobile/ios/build/
 
 # TypeScript
 *.tsbuildinfo
@@ -36,4 +41,3 @@ ios/build/
 # IDEs / editors
 .idea/
 .vscode/
-
