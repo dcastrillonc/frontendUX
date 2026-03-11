@@ -21,14 +21,23 @@
       </div>
 
       <div class="alarm-assignment-page__actions">
-        <a [routerLink]="backRoute" class="alarm-assignment-page__accept-link">
-          <app-primary-action-button
-            label="ACEPTAR"
-            [iconSrc]="null"
-            [compact]="true"
-          ></app-primary-action-button>
-        </a>
+        <button class="alarm-assignment-page__accept-btn" (click)="onAccept()">
+          ACEPTAR
+        </button>
       </div>
     </div>
   </section>
 </app-shell>
+
+<!-- Modal de éxito -->
+<div *ngIf="showSuccess" class="alarm-assignment-page__modal-overlay">
+  <div class="alarm-assignment-page__modal-card">
+    <div class="alarm-assignment-page__modal-icon">
+      <img src="assets/check.svg" alt="Éxito" />
+    </div>
+    <h3 class="alarm-assignment-page__modal-title">Ajustado con éxito</h3>
+    <a routerLink="/cuidador" class="alarm-assignment-page__modal-btn">
+      Aceptar
+    </a>
+  </div>
+</div>

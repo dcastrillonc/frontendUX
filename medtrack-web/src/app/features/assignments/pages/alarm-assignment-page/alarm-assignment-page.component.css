@@ -62,7 +62,77 @@
   justify-content: center;
 }
 
-.alarm-assignment-page__accept-link {
+.alarm-assignment-page__accept-btn {
+  height: 40px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 9999px;
+  background: #45b5c4;
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Modal */
+.alarm-assignment-page__modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.alarm-assignment-page__modal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 36px 36px;
+  width: min(360px, 90vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.alarm-assignment-page__modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.alarm-assignment-page__modal-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.alarm-assignment-page__modal-title {
+  margin: 0 0 24px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.alarm-assignment-page__modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  border-radius: 9999px;
+  background: #45b5c4;
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
 }
 
