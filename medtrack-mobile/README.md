@@ -1,30 +1,11 @@
-# MedTrack Mobile
+# MedTrack+ Mobile
 
-Base inicial de React Native sobre Expo, usando Metro como bundler.
+Aplicación móvil de alarmas de medicamento desarrollado en React Native sobre Expo, usando Metro como bundler.
 
-## Estructura
 
-```text
-medtrack-mobile/
-├── App.tsx
-├── app.json
-├── babel.config.js
-├── metro.config.js
-├── package.json
-├── tsconfig.json
-└── src/
-    ├── components/
-    │   └── brand/
-    │       └── medtrack-logo.tsx
-    ├── screens/
-    │   └── splash-screen.tsx
-    └── theme/
-        └── colors.ts
-```
+## Ejecución
 
-## Ejecutar con Metro
-
-Usa Node 22 LTS.
+Usar Node 22 LTS.
 
 ```bash
 source ~/.nvm/nvm.sh
@@ -34,18 +15,19 @@ npm install
 npm start
 ```
 
-`npm start` levanta Metro.
+En una terminal levantar Metro
 
-## Abrir la app
+```bash
+npm start`
+```
 
-Para levantar una build nativa de desarrollo:
+En otra terminal ejecutar para Android
 
 ```bash
 cd medtrack-mobile
 npm run android
 ```
-
-o
+o si se ejecuta en iOS
 
 ```bash
 cd medtrack-mobile

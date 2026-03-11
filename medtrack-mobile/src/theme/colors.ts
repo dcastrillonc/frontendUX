@@ -1,5 +1,15 @@
 export const colors = {
   background: "#FFFFFF",
+  surface: "#FFFFFF",
   brand: "#45B5C4",
+  brandSoft: "#CBE8EC",
+  brandMuted: "#D9EDF1",
+  border: "#E6E3DE",
+  borderStrong: "#DAD6CF",
+  textSecondary: "#4B5563",
+  textMuted: "#7C7C7C",
+  iconMuted: "#2F3747",
+  navSurface: "#ECEAE7",
+  pagination: "#C9C7C2",
   textPrimary: "#0F172A",
 };
