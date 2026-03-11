@@ -21,7 +21,8 @@ export class CaregiverListPageComponent {
       statusLabel: '12/05/2023',
       initials: 'AG',
       avatarTone: 'sand',
-      route: '/cuidador/ana-garcia'
+      route: '/cuidador/asignar',
+      queryParams: { name: 'Ana García' }
     },
     {
       name: 'Carlos Ruíz',

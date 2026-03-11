@@ -105,6 +105,10 @@
 }
 
 /* Patient row */
+.add-caregiver-page__patient-link {
+  text-decoration: none;
+}
+
 .add-caregiver-page__patient-row {
   display: flex;
   align-items: center;

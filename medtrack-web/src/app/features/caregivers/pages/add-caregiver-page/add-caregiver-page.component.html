@@ -47,12 +47,14 @@
               <span class="add-caregiver-page__step-badge">3</span>
               <span class="add-caregiver-page__step-title">Asignar paciente y tratamiento</span>
             </div>
-            <div class="add-caregiver-page__patient-row">
-              <img class="add-caregiver-page__patient-avatar" [src]="patient.avatarSrc" alt="avatar" />
-              <span class="add-caregiver-page__patient-name">{{ patient.name }}</span>
-              <span class="add-caregiver-page__treatment-chip">{{ patient.treatmentLabel }}</span>
-              <img class="add-caregiver-page__row-arrow" src="assets/arrow-right-gray.svg" alt="" />
-            </div>
+            <a routerLink="/cuidador/asignar" [queryParams]="{from: 'agregar'}" class="add-caregiver-page__patient-link">
+              <div class="add-caregiver-page__patient-row">
+                <img class="add-caregiver-page__patient-avatar" [src]="patient.avatarSrc" alt="avatar" />
+                <span class="add-caregiver-page__patient-name">{{ patient.name }}</span>
+                <span class="add-caregiver-page__treatment-chip">{{ patient.treatmentLabel }}</span>
+                <img class="add-caregiver-page__row-arrow" src="assets/arrow-right-gray.svg" alt="" />
+              </div>
+            </a>
           </div>
 
           <!-- Parte 4 -->

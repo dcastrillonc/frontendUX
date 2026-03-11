@@ -1,8 +1,8 @@
-<app-shell title="" leadingIcon="arrow.svg" titleRoute="/cuidador">
+<app-shell title="" leadingIcon="arrow.svg" [titleRoute]="backRoute">
   <section class="alarm-assignment-page">
     <div class="alarm-assignment-page__content">
       <header class="alarm-assignment-page__header">
-        <h2>Asignación de alarmas para Ana García</h2>
+        <h2>{{ title }}</h2>
         <p>Seleccione los pacientes y tratamientos para asignar las alarmas correspondientes.</p>
       </header>
 
@@ -21,11 +21,13 @@
       </div>
 
       <div class="alarm-assignment-page__actions">
-        <app-primary-action-button
-          label="ACEPTAR"
-          [iconSrc]="null"
-          [compact]="true"
-        ></app-primary-action-button>
+        <a [routerLink]="backRoute" class="alarm-assignment-page__accept-link">
+          <app-primary-action-button
+            label="ACEPTAR"
+            [iconSrc]="null"
+            [compact]="true"
+          ></app-primary-action-button>
+        </a>
       </div>
     </div>
   </section>

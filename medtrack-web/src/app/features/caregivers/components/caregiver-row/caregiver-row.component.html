@@ -3,6 +3,7 @@
   class="caregiver-row caregiver-row--link"
   [class.caregiver-row--pending]="caregiver.pending"
   [routerLink]="caregiver.route"
+  [queryParams]="caregiver.queryParams"
 >
   <div class="caregiver-row__person">
     <span class="caregiver-row__avatar" [ngClass]="'caregiver-row__avatar--' + caregiver.avatarTone">

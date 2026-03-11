@@ -6,4 +6,5 @@ export interface CaregiverItem {
   avatarTone: 'teal' | 'sand' | 'rose' | 'slate' | 'amber';
   pending?: boolean;
   route?: string;
+  queryParams?: Record<string, string>;
 }

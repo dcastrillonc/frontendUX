@@ -27,7 +27,7 @@ export const appRoutes: Routes = [
     component: AddCaregiverPageComponent
   },
   {
-    path: 'cuidador/ana-garcia',
+    path: 'cuidador/asignar',
     component: AlarmAssignmentPageComponent
   }
 ];
