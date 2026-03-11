@@ -1,0 +1,197 @@
+:host {
+  display: block;
+}
+
+.caregiver-row {
+  min-height: 56px;
+  border-radius: 10px;
+  background: #F3F3F2;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(120px, 0.7fr) minmax(160px, 1fr) 18px;
+  align-items: center;
+  gap: 16px;
+}
+
+.caregiver-row--pending {
+  background: #F3F3F2;
+}
+
+.caregiver-row__person {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.caregiver-row__name-container {
+  width: 90.58px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.caregiver-row__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  flex: none;
+}
+
+.caregiver-row__avatar--teal {
+  background: #52b8c4;
+}
+
+.caregiver-row__avatar--sand {
+  background: #d7ad82;
+}
+
+.caregiver-row__avatar--rose {
+  background: #d99595;
+}
+
+.caregiver-row__avatar--slate {
+  background: #8f9baa;
+}
+
+.caregiver-row__avatar--amber {
+  background: #d5a45d;
+}
+
+.caregiver-row__name,
+.caregiver-row__patients,
+.caregiver-row__status {
+  min-width: 0;
+}
+
+.caregiver-row__name {
+  width: 100%;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 500;
+  color: #2a3445;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.caregiver-row__name--pending {
+  width: 89.23px;
+  height: 24px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #64748B;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.caregiver-row__status {
+  height: 20px;
+  font-family: 'Public Sans', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  white-space: nowrap;
+}
+
+.caregiver-row__patients {
+  width: fit-content;
+  height: 20px;
+  font-family: 'Public Sans', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #475569;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  transform: translateX(-85px);
+  white-space: nowrap;
+}
+
+.caregiver-row__patients--pending {
+  width: 71.48px;
+  color: #94A3B8;
+}
+
+.caregiver-row__status--pending {
+  width: min(258.55px, 100%);
+  min-height: 20px;
+  height: auto;
+  padding: 0;
+  gap: 4px;
+  align-items: flex-start;
+  white-space: normal;
+  color: #d78118;
+}
+
+.caregiver-row__status-text--pending {
+  min-width: 0;
+  white-space: normal;
+}
+
+.caregiver-row__warning {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex: none;
+}
+
+.caregiver-row__chevron {
+  width: 12px;
+  height: 12px;
+  display: block;
+  justify-self: end;
+}
+
+@media (max-width: 880px) {
+  .caregiver-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 14px 16px;
+    align-items: start;
+  }
+
+  .caregiver-row__patients,
+  .caregiver-row__status {
+    grid-column: 1 / 2;
+    padding-left: 36px;
+  }
+
+  .caregiver-row__patients {
+    transform: none;
+  }
+
+  .caregiver-row__chevron {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+  }
+}

@@ -1,0 +1,35 @@
+<app-shell title="Lista de cuidadores">
+  <section class="caregiver-page">
+    <div class="caregiver-page__content">
+      <header class="caregiver-page__toolbar">
+        <app-primary-action-button label="Agregar cuidador"></app-primary-action-button>
+      </header>
+
+      <div class="caregiver-page__section-title">
+        <h2>Activos</h2>
+        <span class="caregiver-page__badge">{{ activeCaregivers.length }}</span>
+      </div>
+
+      <div class="caregiver-page__columns" aria-hidden="true">
+        <span>Nombre</span>
+        <span># personas al cuidado</span>
+        <span>Fecha de aceptación</span>
+      </div>
+
+      <div class="caregiver-page__list">
+        <app-caregiver-row *ngFor="let caregiver of activeCaregivers" [caregiver]="caregiver"></app-caregiver-row>
+      </div>
+
+      <section class="caregiver-page__group">
+        <div class="caregiver-page__section-title">
+          <h2>Pendientes</h2>
+          <span class="caregiver-page__badge caregiver-page__badge--warning">{{ pendingCaregivers.length }}</span>
+        </div>
+
+        <div class="caregiver-page__list">
+          <app-caregiver-row *ngFor="let caregiver of pendingCaregivers" [caregiver]="caregiver"></app-caregiver-row>
+        </div>
+      </section>
+    </div>
+  </section>
+</app-shell>

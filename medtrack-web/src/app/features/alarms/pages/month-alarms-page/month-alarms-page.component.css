@@ -1,6 +1,7 @@
 .month-view {
-  height: calc(100vh - 71px);
-  overflow: hidden;
+  min-height: calc(100vh - 71px);
+  min-height: calc(100dvh - 71px);
+  overflow-y: auto;
   padding: clamp(16px, 4vh, 48px) 24px clamp(12px, 3vh, 32px);
   background: #ffffff;
   display: flex;

@@ -5,14 +5,30 @@
   </div>
 
   <nav class="sidebar__nav">
-    <a href="#" *ngFor="let item of navItems">
-      <img class="sidebar__nav-icon" [src]="item.iconSrc" [alt]="item.label + ' icon'" />
-      <span class="sidebar__nav-label">{{ item.label }}</span>
-    </a>
+    <ng-container *ngFor="let item of navItems">
+      <a
+        *ngIf="item.route; else staticItem"
+        [routerLink]="item.route"
+        routerLinkActive="sidebar__nav-link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [title]="item.label"
+        [attr.aria-label]="item.label"
+      >
+        <img class="sidebar__nav-icon" [src]="item.iconSrc" [alt]="item.label + ' icon'" />
+        <span class="sidebar__nav-label">{{ item.label }}</span>
+      </a>
+
+      <ng-template #staticItem>
+        <div class="sidebar__nav-static" aria-disabled="true" title="">
+          <img class="sidebar__nav-icon" [src]="item.iconSrc" [alt]="item.label + ' icon'" />
+          <span class="sidebar__nav-label">{{ item.label }}</span>
+        </div>
+      </ng-template>
+    </ng-container>
   </nav>
 
-  <a href="#" class="sidebar__settings">
+  <div class="sidebar__settings" aria-disabled="true" title="">
     <img class="sidebar__settings-icon" src="/assets/settings.svg" alt="Configuración icon" />
     <span class="sidebar__settings-label">Configuración</span>
-  </a>
+  </div>
 </aside>

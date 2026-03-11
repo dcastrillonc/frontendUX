@@ -9,8 +9,6 @@
 }
 
 .topbar h1 {
-  width: 182.69px;
-  height: 28px;
   margin: 0;
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-style: normal;
@@ -21,9 +19,8 @@
   align-items: center;
   color: #0f172a;
   background: #ffffff;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .topbar__right {

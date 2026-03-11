@@ -1,0 +1,117 @@
+.caregiver-page {
+  min-height: calc(100vh - 71px);
+  min-height: calc(100dvh - 71px);
+  padding: 42px 36px 48px;
+  background: #ffffff;
+  overflow-y: auto;
+}
+
+.caregiver-page__content {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 28px 30px 32px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.caregiver-page__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 22px;
+}
+
+.caregiver-page__section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.caregiver-page__section-title h2 {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #1E293B;
+}
+
+.caregiver-page__badge {
+  width: 23.27px;
+  height: 20px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(69, 181, 196, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #45b5c4;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.caregiver-page__badge--warning {
+  width: 22.86px;
+  background: rgba(221, 119, 17, 0.1);
+  color: #dd7711;
+}
+
+.caregiver-page__columns {
+  padding: 0 18px;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(120px, 0.7fr) minmax(160px, 1fr) 18px;
+  gap: 16px;
+}
+
+.caregiver-page__columns span {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  white-space: nowrap;
+}
+
+.caregiver-page__columns span:nth-child(2) {
+  transform: translateX(-85px);
+}
+
+.caregiver-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caregiver-page__group {
+  margin-top: 26px;
+}
+
+@media (max-width: 960px) {
+  .caregiver-page {
+    padding: 32px 20px 36px;
+  }
+
+  .caregiver-page__content {
+    padding: 24px 20px 28px;
+  }
+
+  .caregiver-page__toolbar {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 880px) {
+  .caregiver-page__columns {
+    display: none;
+  }
+}
