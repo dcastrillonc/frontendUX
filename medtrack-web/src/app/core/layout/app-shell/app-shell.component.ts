@@ -11,4 +11,6 @@ import { TopbarComponent } from '@core/layout/topbar/topbar.component';
 })
 export class AppShellComponent {
   @Input({ required: true }) title!: string;
+  @Input() leadingIcon?: string;
+  @Input() titleRoute?: string;
 }

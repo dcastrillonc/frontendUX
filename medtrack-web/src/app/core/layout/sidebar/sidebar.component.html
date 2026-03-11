@@ -10,7 +10,7 @@
         *ngIf="item.route; else staticItem"
         [routerLink]="item.route"
         routerLinkActive="sidebar__nav-link--active"
-        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLinkActiveOptions]="{ exact: item.exact ?? true }"
         [title]="item.label"
         [attr.aria-label]="item.label"
       >

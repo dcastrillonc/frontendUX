@@ -1,4 +1,9 @@
-<button type="button" class="primary-action-btn">
-  <img class="primary-action-btn__icon" src="/assets/cross.svg" alt="" aria-hidden="true" />
+<button
+  type="button"
+  class="primary-action-btn"
+  [class.primary-action-btn--compact]="compact"
+  [class.primary-action-btn--iconless]="!iconSrc"
+>
+  <img *ngIf="iconSrc" class="primary-action-btn__icon" [src]="'/assets/' + iconSrc" alt="" aria-hidden="true" />
   <span class="primary-action-btn__label">{{ label }}</span>
 </button>

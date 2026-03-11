@@ -1,0 +1,32 @@
+<app-shell title="" leadingIcon="arrow.svg" titleRoute="/cuidador">
+  <section class="alarm-assignment-page">
+    <div class="alarm-assignment-page__content">
+      <header class="alarm-assignment-page__header">
+        <h2>Asignación de alarmas para Ana García</h2>
+        <p>Seleccione los pacientes y tratamientos para asignar las alarmas correspondientes.</p>
+      </header>
+
+      <div class="alarm-assignment-page__grid">
+        <app-assignment-selection-panel
+          title="Pacientes"
+          placeholder="Search"
+          [items]="patients"
+        ></app-assignment-selection-panel>
+
+        <app-assignment-selection-panel
+          title="Tratamientos"
+          placeholder="Search"
+          [items]="treatments"
+        ></app-assignment-selection-panel>
+      </div>
+
+      <div class="alarm-assignment-page__actions">
+        <app-primary-action-button
+          label="ACEPTAR"
+          [iconSrc]="null"
+          [compact]="true"
+        ></app-primary-action-button>
+      </div>
+    </div>
+  </section>
+</app-shell>

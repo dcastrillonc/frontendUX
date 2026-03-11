@@ -19,7 +19,8 @@ export class CaregiverListPageComponent {
       patientsLabel: '2 personas',
       statusLabel: '12/05/2023',
       initials: 'AG',
-      avatarTone: 'sand'
+      avatarTone: 'sand',
+      route: '/cuidador/ana-garcia'
     },
     {
       name: 'Carlos Ruíz',

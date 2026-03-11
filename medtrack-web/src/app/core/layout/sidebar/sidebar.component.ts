@@ -6,6 +6,7 @@ interface SidebarItem {
   label: string;
   iconSrc: string;
   route?: string;
+  exact?: boolean;
 }
 
 @Component({
@@ -17,9 +18,9 @@ interface SidebarItem {
 })
 export class SidebarComponent {
   readonly navItems: SidebarItem[] = [
-    { label: 'Home', iconSrc: '/assets/home.svg', route: '/home' },
+    { label: 'Home', iconSrc: '/assets/home.svg', route: '/home', exact: true },
     { label: 'Historial', iconSrc: '/assets/history.svg' },
-    { label: 'Cuidador', iconSrc: '/assets/carer.svg', route: '/cuidador' },
+    { label: 'Cuidador', iconSrc: '/assets/carer.svg', route: '/cuidador', exact: false },
     { label: 'Progreso', iconSrc: '/assets/progress.svg' },
     { label: 'Asignación alarmas', iconSrc: '/assets/alarms.svg' }
   ];

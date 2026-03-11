@@ -1,5 +1,15 @@
 <header class="topbar">
-  <h1>{{ title }}</h1>
+  <a *ngIf="titleRoute; else staticTitle" class="topbar__title-group topbar__title-group--link" [routerLink]="titleRoute">
+    <img *ngIf="leadingIcon" class="topbar__leading-icon" [src]="'/assets/' + leadingIcon" alt="" aria-hidden="true" />
+    <h1>{{ title }}</h1>
+  </a>
+
+  <ng-template #staticTitle>
+    <div class="topbar__title-group">
+      <img *ngIf="leadingIcon" class="topbar__leading-icon" [src]="'/assets/' + leadingIcon" alt="" aria-hidden="true" />
+      <h1>{{ title }}</h1>
+    </div>
+  </ng-template>
   <div class="topbar__right">
     <button type="button" aria-label="Buscar">
       <img class="topbar__search-icon" src="/assets/search.svg" alt="" aria-hidden="true" />

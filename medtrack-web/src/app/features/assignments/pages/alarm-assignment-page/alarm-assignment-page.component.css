@@ -1,0 +1,82 @@
+.alarm-assignment-page {
+  min-height: calc(100vh - 71px);
+  min-height: calc(100dvh - 71px);
+  background: #ffffff;
+  padding: 48px 44px 56px;
+  overflow-y: auto;
+}
+
+.alarm-assignment-page__content {
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.alarm-assignment-page__header {
+  margin-bottom: 18px;
+}
+
+.alarm-assignment-page__header h2 {
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  color: #0f172a;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.alarm-assignment-page__header p {
+  width: 100%;
+  margin: 4px 0 0;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.alarm-assignment-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.alarm-assignment-page__actions {
+  margin-top: 84px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .alarm-assignment-page {
+    padding: 32px 20px 40px;
+  }
+
+  .alarm-assignment-page__header h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .alarm-assignment-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alarm-assignment-page__actions {
+    margin-top: 40px;
+  }
+}

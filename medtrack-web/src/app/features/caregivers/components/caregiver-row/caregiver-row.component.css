@@ -2,6 +2,10 @@
   display: block;
 }
 
+.caregiver-row--link {
+  text-decoration: none;
+}
+
 .caregiver-row {
   min-height: 56px;
   border-radius: 10px;
@@ -11,6 +15,16 @@
   grid-template-columns: minmax(0, 1.8fr) minmax(120px, 0.7fr) minmax(160px, 1fr) 18px;
   align-items: center;
   gap: 16px;
+}
+
+.caregiver-row--link .caregiver-row__name,
+.caregiver-row--link .caregiver-row__patients,
+.caregiver-row--link .caregiver-row__status {
+  text-decoration: none;
+}
+
+.caregiver-row--link:not(.caregiver-row--pending) {
+  cursor: pointer;
 }
 
 .caregiver-row--pending {

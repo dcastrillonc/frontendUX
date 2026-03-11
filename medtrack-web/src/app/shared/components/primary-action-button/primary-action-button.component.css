@@ -9,11 +9,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   cursor: pointer;
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+.primary-action-btn--compact {
+  width: 139px;
+}
+
+.primary-action-btn--iconless {
+  padding-inline: 24px;
 }
 
 .primary-action-btn__icon {

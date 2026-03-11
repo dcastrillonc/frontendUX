@@ -1,0 +1,25 @@
+<section class="assignment-panel">
+  <h3>{{ title }}</h3>
+
+  <div class="assignment-panel__card">
+    <label class="assignment-panel__search">
+      <img src="/assets/search.svg" alt="" aria-hidden="true" />
+      <input type="search" [placeholder]="placeholder" />
+    </label>
+
+    <div class="assignment-panel__list">
+      <label
+        class="assignment-panel__item"
+        *ngFor="let item of items"
+        [class.assignment-panel__item--disabled]="item.disabled"
+      >
+        <span class="assignment-panel__checkbox" [class.assignment-panel__checkbox--selected]="item.selected">
+          <img *ngIf="item.selected" src="/assets/check.svg" alt="" aria-hidden="true" />
+        </span>
+        <span class="assignment-panel__item-label" [class.assignment-panel__item-label--disabled]="item.disabled">
+          {{ item.label }}
+        </span>
+      </label>
+    </div>
+  </div>
+</section>

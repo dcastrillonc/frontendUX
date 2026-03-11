@@ -5,4 +5,5 @@ export interface CaregiverItem {
   initials: string;
   avatarTone: 'teal' | 'sand' | 'rose' | 'slate' | 'amber';
   pending?: boolean;
+  route?: string;
 }

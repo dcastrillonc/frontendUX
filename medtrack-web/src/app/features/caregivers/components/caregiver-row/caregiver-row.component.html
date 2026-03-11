@@ -1,4 +1,9 @@
-<article class="caregiver-row" [class.caregiver-row--pending]="caregiver.pending">
+<a
+  *ngIf="caregiver.route; else staticRow"
+  class="caregiver-row caregiver-row--link"
+  [class.caregiver-row--pending]="caregiver.pending"
+  [routerLink]="caregiver.route"
+>
   <div class="caregiver-row__person">
     <span class="caregiver-row__avatar" [ngClass]="'caregiver-row__avatar--' + caregiver.avatarTone">
       {{ caregiver.initials }}
@@ -18,4 +23,28 @@
   </div>
 
   <img class="caregiver-row__chevron" src="/assets/arrow-right-gray.svg" alt="" aria-hidden="true" />
-</article>
+</a>
+
+<ng-template #staticRow>
+  <article class="caregiver-row" [class.caregiver-row--pending]="caregiver.pending">
+    <div class="caregiver-row__person">
+      <span class="caregiver-row__avatar" [ngClass]="'caregiver-row__avatar--' + caregiver.avatarTone">
+        {{ caregiver.initials }}
+      </span>
+      <span class="caregiver-row__name" [class.caregiver-row__name--pending]="caregiver.pending">
+        {{ caregiver.name }}
+      </span>
+    </div>
+
+    <div class="caregiver-row__patients" [class.caregiver-row__patients--pending]="caregiver.pending">
+      {{ caregiver.patientsLabel }}
+    </div>
+
+    <div class="caregiver-row__status" [class.caregiver-row__status--pending]="caregiver.pending">
+      <img *ngIf="caregiver.pending" class="caregiver-row__warning" src="/assets/pending.svg" alt="" aria-hidden="true" />
+      <span [class.caregiver-row__status-text--pending]="caregiver.pending">{{ caregiver.statusLabel }}</span>
+    </div>
+
+    <img class="caregiver-row__chevron" src="/assets/arrow-right-gray.svg" alt="" aria-hidden="true" />
+  </article>
+</ng-template>
