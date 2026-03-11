@@ -1,0 +1,101 @@
+<app-shell title="Agregar cuidador" leadingIcon="arrow-left.svg" titleRoute="/cuidador">
+  <section class="add-caregiver-page">
+    <div class="add-caregiver-page__content">
+
+      <!-- Formulario -->
+      <ng-container *ngIf="!submitted">
+        <header class="add-caregiver-page__header">
+          <h2>Ingresa un nuevo cuidador</h2>
+          <p>El nuevo cuidador deberá descargar la aplicación y aceptar el cuidado para comenzar a recibir las alarmas asignadas.</p>
+        </header>
+
+        <div class="add-caregiver-page__form">
+
+          <!-- Parte 1 -->
+          <div class="add-caregiver-page__step">
+            <div class="add-caregiver-page__step-label">
+              <span class="add-caregiver-page__step-badge">1</span>
+              <span class="add-caregiver-page__step-title">Correo nuevo cuidador</span>
+            </div>
+            <input
+              class="add-caregiver-page__input"
+              type="email"
+              placeholder="ejemplo@correo.com"
+              [(ngModel)]="email"
+              name="email"
+            />
+          </div>
+
+          <!-- Parte 2 -->
+          <div class="add-caregiver-page__step">
+            <div class="add-caregiver-page__step-label">
+              <span class="add-caregiver-page__step-badge">2</span>
+              <span class="add-caregiver-page__step-title">Mensaje de invitación</span>
+            </div>
+            <textarea
+              class="add-caregiver-page__textarea"
+              placeholder="Escribe un mensaje breve para el nuevo cuidador..."
+              [(ngModel)]="message"
+              name="message"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- Parte 3 -->
+          <div class="add-caregiver-page__step">
+            <div class="add-caregiver-page__step-label">
+              <span class="add-caregiver-page__step-badge">3</span>
+              <span class="add-caregiver-page__step-title">Asignar paciente y tratamiento</span>
+            </div>
+            <div class="add-caregiver-page__patient-row">
+              <img class="add-caregiver-page__patient-avatar" [src]="patient.avatarSrc" alt="avatar" />
+              <span class="add-caregiver-page__patient-name">{{ patient.name }}</span>
+              <span class="add-caregiver-page__treatment-chip">{{ patient.treatmentLabel }}</span>
+              <img class="add-caregiver-page__row-arrow" src="assets/arrow-right-gray.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- Parte 4 -->
+          <div class="add-caregiver-page__step">
+            <div class="add-caregiver-page__step-label">
+              <span class="add-caregiver-page__step-badge">4</span>
+              <span class="add-caregiver-page__step-title">Aceptación de términos y condiciones</span>
+            </div>
+            <label class="add-caregiver-page__checkbox-label">
+              <input
+                type="checkbox"
+                class="add-caregiver-page__checkbox"
+                [(ngModel)]="termsAccepted"
+                name="terms"
+              />
+              <span>He leído y acepto el <a class="add-caregiver-page__link" href="#">documento de términos y condiciones</a></span>
+            </label>
+          </div>
+
+        </div>
+
+        <div class="add-caregiver-page__actions">
+          <button class="add-caregiver-page__submit-btn" (click)="onSubmit()">
+            Enviar invitación
+          </button>
+        </div>
+      </ng-container>
+
+      <!-- Tarjeta de éxito -->
+      <div *ngIf="submitted" class="add-caregiver-page__success-card">
+        <div class="add-caregiver-page__success-icon">
+          <img src="assets/check.svg" alt="Éxito" />
+        </div>
+        <h2 class="add-caregiver-page__success-title">Enviado exitosamente</h2>
+        <p class="add-caregiver-page__success-desc">
+          La invitación ha sido entregada. Tan pronto el nuevo cuidador la acepte podrá recibir alarmas y se podrán gestionar.
+        </p>
+        <a routerLink="/cuidador" class="add-caregiver-page__success-btn">
+          Aceptar
+          <img src="assets/arrow-right.svg" alt="" aria-hidden="true" />
+        </a>
+      </div>
+
+    </div>
+  </section>
+</app-shell>

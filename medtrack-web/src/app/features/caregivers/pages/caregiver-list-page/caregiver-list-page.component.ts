@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AppShellComponent } from '@core/layout/app-shell/app-shell.component';
 import { CaregiverRowComponent } from '@features/caregivers/components/caregiver-row/caregiver-row.component';
 import { CaregiverItem } from '@features/caregivers/models/caregiver-item.model';
@@ -8,7 +9,7 @@ import { PrimaryActionButtonComponent } from '@shared/components/primary-action-
 @Component({
   selector: 'app-caregiver-list-page',
   standalone: true,
-  imports: [CommonModule, AppShellComponent, CaregiverRowComponent, PrimaryActionButtonComponent],
+  imports: [CommonModule, RouterLink, AppShellComponent, CaregiverRowComponent, PrimaryActionButtonComponent],
   templateUrl: './caregiver-list-page.component.html',
   styleUrl: './caregiver-list-page.component.css'
 })

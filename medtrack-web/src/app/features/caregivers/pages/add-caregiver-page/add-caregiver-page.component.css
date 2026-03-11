@@ -1,0 +1,269 @@
+.add-caregiver-page {
+  height: 100%;
+  padding: 42px 36px 48px;
+  background: #ffffff;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.add-caregiver-page__content {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 28px 30px 40px;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+/* Header */
+.add-caregiver-page__header {
+  margin-bottom: 32px;
+}
+
+.add-caregiver-page__header h2 {
+  margin: 0 0 8px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.add-caregiver-page__header p {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #526077;
+  line-height: 1.5;
+  max-width: 580px;
+}
+
+/* Form */
+.add-caregiver-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Step */
+.add-caregiver-page__step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-caregiver-page__step-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-caregiver-page__step-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #3db4c6;
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.add-caregiver-page__step-title {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Inputs */
+.add-caregiver-page__input,
+.add-caregiver-page__textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.add-caregiver-page__input::placeholder,
+.add-caregiver-page__textarea::placeholder {
+  color: #99a2b2;
+}
+
+.add-caregiver-page__input:focus,
+.add-caregiver-page__textarea:focus {
+  border-color: #3db4c6;
+}
+
+/* Patient row */
+.add-caregiver-page__patient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #f8f9fb;
+  border-radius: 10px;
+}
+
+.add-caregiver-page__patient-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.add-caregiver-page__patient-name {
+  flex: 1;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.add-caregiver-page__treatment-chip {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1.5px solid #d1d5db;
+  background: #ffffff;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  color: #526077;
+  white-space: nowrap;
+}
+
+.add-caregiver-page__row-arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Checkbox */
+.add-caregiver-page__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #526077;
+  cursor: pointer;
+}
+
+.add-caregiver-page__checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #3db4c6;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.add-caregiver-page__link {
+  color: #3db4c6;
+  text-decoration: underline;
+}
+
+/* Actions */
+.add-caregiver-page__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.add-caregiver-page__submit-btn {
+  height: 40px;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 9999px;
+  background: #45b5c4;
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Success card */
+.add-caregiver-page__success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 40px 40px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  width: min(400px, 100%);
+  margin: 40px auto 0;
+}
+
+.add-caregiver-page__success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.add-caregiver-page__success-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.add-caregiver-page__success-title {
+  margin: 0 0 12px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.add-caregiver-page__success-desc {
+  margin: 0 0 32px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #526077;
+  line-height: 1.6;
+}
+
+.add-caregiver-page__success-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border-radius: 9999px;
+  background: #45b5c4;
+  color: #ffffff;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.add-caregiver-page__success-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .add-caregiver-page {
+    padding: 32px 20px 36px;
+  }
+
+  .add-caregiver-page__content {
+    padding: 24px 20px 32px;
+  }
+}

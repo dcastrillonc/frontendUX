@@ -20,6 +20,10 @@
   margin-bottom: 22px;
 }
 
+.caregiver-page__toolbar a {
+  text-decoration: none;
+}
+
 .caregiver-page__section-title {
   display: inline-flex;
   align-items: center;
