@@ -10,9 +10,10 @@ export type MobileTabBarItem = {
 
 type MobileTabBarProps = {
   items: MobileTabBarItem[];
+  onPressFab?: () => void;
 };
 
-export function MobileTabBar({ items }: MobileTabBarProps) {
+export function MobileTabBar({ items, onPressFab }: MobileTabBarProps) {
   return (
     <View style={styles.wrapper}>
       <View style={styles.bar}>
@@ -31,7 +32,7 @@ export function MobileTabBar({ items }: MobileTabBarProps) {
         ))}
       </View>
 
-      <Pressable accessibilityRole="button" style={styles.fab}>
+      <Pressable accessibilityRole="button" onPress={onPressFab} style={styles.fab}>
         <AppIcon name="plus" size={23} variant="inverse" />
       </Pressable>
     </View>
@@ -40,12 +41,14 @@ export function MobileTabBar({ items }: MobileTabBarProps) {
 
 const styles = StyleSheet.create({
   wrapper: {
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     gap: 14,
   },
   bar: {
-    width: 279,
+    flex: 1,
     height: 71,
     flexDirection: "row",
     alignItems: "center",

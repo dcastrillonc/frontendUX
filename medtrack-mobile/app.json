@@ -12,6 +12,13 @@
         {
           "launchMode": "most-recent"
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permite que MedTrack+ acceda a tu camara para escanear formulas medicas.",
+          "recordAudioAndroid": false
+        }
       ]
     ],
     "platforms": [

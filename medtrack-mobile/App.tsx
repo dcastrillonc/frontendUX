@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 
 import { HomeScreen } from "./src/screens/home-screen";
+import { ScanPrescriptionScreen } from "./src/screens/scan-prescription-screen";
 import { SplashScreen } from "./src/screens/splash-screen";
+
+type AppScreen = "home" | "scanPrescription";
 
 export default function App() {
   const [isBooting, setIsBooting] = useState(true);
+  const [currentScreen, setCurrentScreen] = useState<AppScreen>("home");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,5 +18,13 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return isBooting ? <SplashScreen /> : <HomeScreen />;
+  if (isBooting) {
+    return <SplashScreen />;
+  }
+
+  if (currentScreen === "scanPrescription") {
+    return <ScanPrescriptionScreen onBack={() => setCurrentScreen("home")} />;
+  }
+
+  return <HomeScreen onOpenScanPrescription={() => setCurrentScreen("scanPrescription")} />;
 }

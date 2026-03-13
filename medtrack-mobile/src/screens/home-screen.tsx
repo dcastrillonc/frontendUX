@@ -1,4 +1,4 @@
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
 import { SectionHeader } from "../components/common/section-header";
 import { UserAvatar } from "../components/common/user-avatar";
 import { ReminderCard, type ReminderCardData } from "../components/home/reminder-card";
@@ -21,7 +21,14 @@ const tabItems: MobileTabBarItem[] = [
   { id: "progress", icon: "trophy" },
 ];
 
-export function HomeScreen() {
+const androidTopInset = Platform.OS === "android" ? (StatusBar.currentHeight ?? 0) + 12 : 0;
+const androidTabBarLift = Platform.OS === "android" ? 30 : 0;
+
+type HomeScreenProps = {
+  onOpenScanPrescription: () => void;
+};
+
+export function HomeScreen({ onOpenScanPrescription }: HomeScreenProps) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
@@ -61,12 +68,13 @@ export function HomeScreen() {
             <ScanMedicationCard
               title="Escanea tu fórmula médica"
               description="Registra tu medicamento con tu fórmula médica"
+              onPress={onOpenScanPrescription}
             />
           </View>
         </View>
 
         <View style={styles.footer}>
-          <MobileTabBar items={tabItems} />
+          <MobileTabBar items={tabItems} onPressFab={onOpenScanPrescription} />
         </View>
       </View>
     </SafeAreaView>
@@ -82,7 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
     paddingHorizontal: 36,
-    paddingTop: 22,
+    paddingTop: 22 + androidTopInset,
     paddingBottom: 20,
   },
   header: {
@@ -149,5 +157,6 @@ const styles = StyleSheet.create({
   footer: {
     marginTop: "auto",
     paddingTop: 28,
+    marginBottom: androidTabBarLift,
   },
 });

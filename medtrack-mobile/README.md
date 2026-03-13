@@ -10,6 +10,9 @@ Usar Node 22 LTS.
 ```bash
 source ~/.nvm/nvm.sh
 nvm use
+```
+
+```bash
 cd medtrack-mobile
 npm install
 npm start
@@ -18,7 +21,7 @@ npm start
 En una terminal levantar Metro
 
 ```bash
-npm start`
+npm start
 ```
 
 En otra terminal ejecutar para Android

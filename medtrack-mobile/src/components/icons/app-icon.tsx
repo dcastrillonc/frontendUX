@@ -1,7 +1,16 @@
 import { Image } from "react-native";
 import { SvgUri } from "react-native-svg";
 
-type IconName = "alarm" | "bell" | "camera" | "check" | "home" | "plus" | "timer" | "trophy";
+type IconName =
+  | "alarm"
+  | "bell"
+  | "camera"
+  | "check"
+  | "chev-circle-left"
+  | "home"
+  | "plus"
+  | "timer"
+  | "trophy";
 type IconVariant = "default" | "inverse";
 
 type AppIconProps = {
@@ -26,6 +35,10 @@ const iconSources = {
   check: {
     default: Image.resolveAssetSource(require("../../assets/check.svg")).uri,
     inverse: Image.resolveAssetSource(require("../../assets/check.svg")).uri,
+  },
+  "chev-circle-left": {
+    default: Image.resolveAssetSource(require("../../assets/chev-circle-left.svg")).uri,
+    inverse: Image.resolveAssetSource(require("../../assets/chev-circle-left.svg")).uri,
   },
   home: {
     default: Image.resolveAssetSource(require("../../assets/home-black.svg")).uri,

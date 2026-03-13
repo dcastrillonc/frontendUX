@@ -18,6 +18,7 @@ Instala lo siguiente en tu equipo para iniciar la aplicación web:
 1. `Node.js` en una versión compatible con Angular (https://nodejs.org/en/download).
 2. `npm` (ya viene con Node).
 3. `Angular CLI` (opcional global, recomendado para usar `ng` en consola):
+
    ```bash
    npm install -g @angular/cli
    ```

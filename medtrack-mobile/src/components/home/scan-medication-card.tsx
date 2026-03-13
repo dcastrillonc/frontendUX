@@ -6,14 +6,16 @@ import { colors } from "../../theme/colors";
 type ScanMedicationCardProps = {
   title: string;
   description: string;
+  onPress?: () => void;
 };
 
 export function ScanMedicationCard({
   title,
   description,
+  onPress,
 }: ScanMedicationCardProps) {
   return (
-    <Pressable style={styles.card}>
+    <Pressable accessibilityRole="button" onPress={onPress} style={styles.card}>
       <View style={styles.iconWrap}>
         <AppIcon name="camera" size={36} variant="inverse" />
       </View>
