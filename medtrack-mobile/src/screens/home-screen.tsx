@@ -1,4 +1,16 @@
-import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import {
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+} from "react-native";
 import { SectionHeader } from "../components/common/section-header";
 import { UserAvatar } from "../components/common/user-avatar";
 import { ReminderCard, type ReminderCardData } from "../components/home/reminder-card";
@@ -7,13 +19,29 @@ import { MobileTabBar, type MobileTabBarItem } from "../components/navigation/mo
 import { AppIcon } from "../components/icons/app-icon";
 import { colors } from "../theme/colors";
 
-const nextReminder: ReminderCardData = {
-  scheduleLabel: "Próxima dosis - 08:00 AM",
-  title: "No olvides",
-  description: "Toma tu pastilla de ",
-  descriptionEmphasis: "acetaminofén",
-  details: "500 mg - 1 pastilla",
-};
+const reminders: ReminderCardData[] = [
+  {
+    scheduleLabel: "Próxima dosis - 08:00 AM",
+    title: "No olvides",
+    description: "Toma tu pastilla de ",
+    descriptionEmphasis: "acetaminofén",
+    details: "500 mg - 1 pastilla",
+  },
+  {
+    scheduleLabel: "Próxima dosis - 01:00 PM",
+    title: "Recuerda",
+    description: "Aplicar tu medicamento ",
+    descriptionEmphasis: "insulina",
+    details: "10 UI - 1 dosis",
+  },
+  {
+    scheduleLabel: "Próxima dosis - 09:00 PM",
+    title: "Pendiente",
+    description: "Tomar la cápsula de ",
+    descriptionEmphasis: "omeprazol",
+    details: "20 mg - 1 cápsula",
+  },
+];
 
 const tabItems: MobileTabBarItem[] = [
   { id: "home", icon: "home", active: true },
@@ -29,6 +57,16 @@ type HomeScreenProps = {
 };
 
 export function HomeScreen({ onOpenScanPrescription }: HomeScreenProps) {
+  const { width } = useWindowDimensions();
+  const [activeReminderIndex, setActiveReminderIndex] = useState(0);
+
+  const carouselWidth = Math.max(width - 72, 1);
+
+  const handleReminderScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const nextIndex = Math.round(event.nativeEvent.contentOffset.x / carouselWidth);
+    setActiveReminderIndex(nextIndex);
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
@@ -53,12 +91,28 @@ export function HomeScreen({ onOpenScanPrescription }: HomeScreenProps) {
             titleStyle={styles.remindersTitle}
           />
           <View style={styles.sectionBody}>
-            <ReminderCard reminder={nextReminder} />
+            <FlatList
+              data={reminders}
+              horizontal
+              keyExtractor={(item) => item.scheduleLabel}
+              onMomentumScrollEnd={handleReminderScroll}
+              pagingEnabled
+              renderItem={({ item }) => (
+                <View style={[styles.carouselPage, { width: carouselWidth }]}>
+                  <ReminderCard reminder={item} />
+                </View>
+              )}
+              showsHorizontalScrollIndicator={false}
+              snapToAlignment="start"
+            />
           </View>
           <View style={styles.pagination}>
-            <View style={[styles.dot, styles.dotActive]} />
-            <View style={styles.dot} />
-            <View style={styles.dot} />
+            {reminders.map((reminder, index) => (
+              <View
+                key={reminder.scheduleLabel}
+                style={[styles.dot, index === activeReminderIndex ? styles.dotActive : undefined]}
+              />
+            ))}
           </View>
         </View>
 
@@ -142,6 +196,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 14,
+  },
+  carouselPage: {
+    justifyContent: "center",
   },
   dot: {
     width: 12,
