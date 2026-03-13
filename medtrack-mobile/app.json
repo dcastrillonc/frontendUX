@@ -3,6 +3,7 @@
     "name": "MedTrack+",
     "slug": "medtrack-mobile",
     "version": "0.0.1",
+    "icon": "./src/assets/app-icon.png",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "scheme": "medtrack",
