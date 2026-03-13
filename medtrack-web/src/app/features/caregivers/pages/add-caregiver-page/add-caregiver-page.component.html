@@ -66,10 +66,17 @@
             <label class="add-caregiver-page__checkbox-label">
               <input
                 type="checkbox"
-                class="add-caregiver-page__checkbox"
+                class="add-caregiver-page__checkbox-input"
                 [(ngModel)]="termsAccepted"
                 name="terms"
               />
+              <span
+                class="add-caregiver-page__checkbox"
+                [class.add-caregiver-page__checkbox--selected]="termsAccepted"
+                aria-hidden="true"
+              >
+                <img *ngIf="termsAccepted" src="/assets/check.svg" alt="" />
+              </span>
               <span>He leído y acepto el <a class="add-caregiver-page__link" href="#">documento de términos y condiciones</a></span>
             </label>
           </div>

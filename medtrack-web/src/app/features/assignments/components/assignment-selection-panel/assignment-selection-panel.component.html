@@ -8,10 +8,14 @@
     </label>
 
     <div class="assignment-panel__list">
-      <label
+      <button
+        type="button"
         class="assignment-panel__item"
         *ngFor="let item of items"
+        [attr.aria-pressed]="item.selected ? 'true' : 'false'"
+        [disabled]="item.disabled"
         [class.assignment-panel__item--disabled]="item.disabled"
+        (click)="toggleItem(item)"
       >
         <span class="assignment-panel__checkbox" [class.assignment-panel__checkbox--selected]="item.selected">
           <img *ngIf="item.selected" src="/assets/check.svg" alt="" aria-hidden="true" />
@@ -19,7 +23,7 @@
         <span class="assignment-panel__item-label" [class.assignment-panel__item-label--disabled]="item.disabled">
           {{ item.label }}
         </span>
-      </label>
+      </button>
     </div>
   </div>
 </section>

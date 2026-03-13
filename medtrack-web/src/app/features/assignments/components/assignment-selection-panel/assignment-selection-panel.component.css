@@ -76,14 +76,26 @@
 }
 
 .assignment-panel__item {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   font-family: 'Public Sans', 'Segoe UI', sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #334155;
   white-space: nowrap;
+  cursor: pointer;
+  text-align: left;
+}
+
+.assignment-panel__item:focus-visible {
+  outline: 2px solid rgba(69, 181, 196, 0.45);
+  outline-offset: 4px;
 }
 
 .assignment-panel__item--disabled {

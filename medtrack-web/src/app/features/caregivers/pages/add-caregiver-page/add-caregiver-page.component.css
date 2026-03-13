@@ -162,12 +162,38 @@
   cursor: pointer;
 }
 
+.add-caregiver-page__checkbox-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .add-caregiver-page__checkbox {
-  width: 18px;
-  height: 18px;
-  accent-color: #3db4c6;
-  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+
+.add-caregiver-page__checkbox--selected {
+  border-color: #45b5c4;
+  background: #45b5c4;
+}
+
+.add-caregiver-page__checkbox img {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.add-caregiver-page__checkbox-label:has(.add-caregiver-page__checkbox-input:focus-visible) .add-caregiver-page__checkbox {
+  outline: 2px solid rgba(69, 181, 196, 0.45);
+  outline-offset: 4px;
 }
 
 .add-caregiver-page__link {

@@ -13,4 +13,12 @@ export class AssignmentSelectionPanelComponent {
   @Input({ required: true }) title!: string;
   @Input() placeholder = 'Search';
   @Input({ required: true }) items!: AssignmentSelectionItem[];
+
+  toggleItem(item: AssignmentSelectionItem): void {
+    if (item.disabled) {
+      return;
+    }
+
+    item.selected = !item.selected;
+  }
 }
