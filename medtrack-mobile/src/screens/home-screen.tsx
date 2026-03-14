@@ -54,9 +54,10 @@ const androidTabBarLift = Platform.OS === "android" ? 30 : 0;
 
 type HomeScreenProps = {
   onOpenScanPrescription: () => void;
+  onNavigateToAlarms: () => void;
 };
 
-export function HomeScreen({ onOpenScanPrescription }: HomeScreenProps) {
+export function HomeScreen({ onOpenScanPrescription, onNavigateToAlarms }: HomeScreenProps) {
   const { width } = useWindowDimensions();
   const [activeReminderIndex, setActiveReminderIndex] = useState(0);
 
@@ -128,7 +129,11 @@ export function HomeScreen({ onOpenScanPrescription }: HomeScreenProps) {
         </View>
 
         <View style={styles.footer}>
-          <MobileTabBar items={tabItems} onPressFab={onOpenScanPrescription} />
+          <MobileTabBar
+            items={tabItems}
+            onPressFab={onOpenScanPrescription}
+            onPressItem={(id) => { if (id === "alarms") onNavigateToAlarms(); }}
+          />
         </View>
       </View>
     </SafeAreaView>

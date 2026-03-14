@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 
+import type { AlarmCardData } from "./src/components/alarms/alarm-card";
+import { AlarmUpdateSuccessScreen } from "./src/screens/alarm-update-success-screen";
+import { AlarmScreen } from "./src/screens/alarm-screen";
+import { EditAlarmScreen } from "./src/screens/edit-alarm-screen";
 import { HomeScreen } from "./src/screens/home-screen";
+import { LoginScreen } from "./src/screens/login-screen";
 import { ScanPrescriptionScreen } from "./src/screens/scan-prescription-screen";
 import { SplashScreen } from "./src/screens/splash-screen";
 
-type AppScreen = "home" | "scanPrescription";
+type AppScreen = "login" | "home" | "scanPrescription" | "alarms" | "editAlarm" | "alarmSuccess";
 
 export default function App() {
   const [isBooting, setIsBooting] = useState(true);
-  const [currentScreen, setCurrentScreen] = useState<AppScreen>("home");
+  const [currentScreen, setCurrentScreen] = useState<AppScreen>("login");
+  const [editingAlarm, setEditingAlarm] = useState<AlarmCardData | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,9 +28,42 @@ export default function App() {
     return <SplashScreen />;
   }
 
+  if (currentScreen === "login") {
+    return <LoginScreen onLogin={() => setCurrentScreen("home")} />;
+  }
+
   if (currentScreen === "scanPrescription") {
     return <ScanPrescriptionScreen onBack={() => setCurrentScreen("home")} />;
   }
 
-  return <HomeScreen onOpenScanPrescription={() => setCurrentScreen("scanPrescription")} />;
+  if (currentScreen === "alarms") {
+    return (
+      <AlarmScreen
+        onNavigateToHome={() => setCurrentScreen("home")}
+        onOpenScanPrescription={() => setCurrentScreen("scanPrescription")}
+        onEditAlarm={(alarm) => { setEditingAlarm(alarm); setCurrentScreen("editAlarm"); }}
+      />
+    );
+  }
+
+  if (currentScreen === "editAlarm" && editingAlarm) {
+    return (
+      <EditAlarmScreen
+        alarm={editingAlarm}
+        onBack={() => setCurrentScreen("alarms")}
+        onSuccess={() => setCurrentScreen("alarmSuccess")}
+      />
+    );
+  }
+
+  if (currentScreen === "alarmSuccess") {
+    return <AlarmUpdateSuccessScreen onDone={() => setCurrentScreen("alarms")} />;
+  }
+
+  return (
+    <HomeScreen
+      onOpenScanPrescription={() => setCurrentScreen("scanPrescription")}
+      onNavigateToAlarms={() => setCurrentScreen("alarms")}
+    />
+  );
 }

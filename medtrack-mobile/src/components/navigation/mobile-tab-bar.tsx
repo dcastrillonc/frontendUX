@@ -11,9 +11,10 @@ export type MobileTabBarItem = {
 type MobileTabBarProps = {
   items: MobileTabBarItem[];
   onPressFab?: () => void;
+  onPressItem?: (id: string) => void;
 };
 
-export function MobileTabBar({ items, onPressFab }: MobileTabBarProps) {
+export function MobileTabBar({ items, onPressFab, onPressItem }: MobileTabBarProps) {
   return (
     <View style={styles.wrapper}>
       <View style={styles.bar}>
@@ -21,6 +22,7 @@ export function MobileTabBar({ items, onPressFab }: MobileTabBarProps) {
           <Pressable
             key={item.id}
             accessibilityRole="button"
+            onPress={() => onPressItem?.(item.id)}
             style={[styles.item, item.active ? styles.itemActive : undefined]}
           >
             <AppIcon
