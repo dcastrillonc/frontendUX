@@ -11,10 +11,9 @@ import {
   View,
   useWindowDimensions,
 } from "react-native";
-import { SvgUri } from "react-native-svg";
 import { colors } from "../theme/colors";
 
-const backgroundUri = Image.resolveAssetSource(require("../assets/home-background.svg")).uri;
+import HomeBackground from "../assets/home-background.svg";
 
 type LoginScreenProps = {
   onLogin: () => void;
@@ -29,8 +28,7 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.background} />
-      <SvgUri
-        uri={backgroundUri}
+      <HomeBackground
         width={width}
         height={width * (512 / 440)}
         style={styles.background}

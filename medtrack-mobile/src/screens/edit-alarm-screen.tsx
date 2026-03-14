@@ -12,18 +12,22 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { Image } from "react-native";
-import { SvgUri } from "react-native-svg";
 import type { AlarmCardData } from "../components/alarms/alarm-card";
 import { AppIcon } from "../components/icons/app-icon";
 import { colors } from "../theme/colors";
 
+import CalendarEditAlarm from "../assets/calendar-edit-alarm.svg";
+import ClockEditAlarm from "../assets/clock-edit-alarm.svg";
+import DosisEditAlarm from "../assets/dosis-edit-alarm.svg";
+import FileEditAlarm from "../assets/file-edit-alarm.svg";
+import NameEditAlarm from "../assets/name-edit-alarm.svg";
+
 const fieldIcons = {
-  name: Image.resolveAssetSource(require("../assets/name-edit-alarm.svg")).uri,
-  dosis: Image.resolveAssetSource(require("../assets/dosis-edit-alarm.svg")).uri,
-  clock: Image.resolveAssetSource(require("../assets/clock-edit-alarm.svg")).uri,
-  calendar: Image.resolveAssetSource(require("../assets/calendar-edit-alarm.svg")).uri,
-  file: Image.resolveAssetSource(require("../assets/file-edit-alarm.svg")).uri,
+  name: NameEditAlarm,
+  dosis: DosisEditAlarm,
+  clock: ClockEditAlarm,
+  calendar: CalendarEditAlarm,
+  file: FileEditAlarm,
 };
 
 const ITEM_H =30;
@@ -107,17 +111,17 @@ export function EditAlarmScreen({ alarm, onBack, onSuccess }: EditAlarmScreenPro
           <Text style={styles.sectionTitle}>Detalles del medicamento</Text>
 
           {[
-            { label: "Nombre", value: name, onChange: setName, iconUri: fieldIcons.name },
-            { label: "Dosis", value: dose, onChange: setDose, iconUri: fieldIcons.dosis },
-            { label: "Frecuencia", value: frequency, onChange: setFrequency, iconUri: fieldIcons.clock },
-            { label: "Duración del tratamiento", value: duration, onChange: setDuration, iconUri: fieldIcons.calendar },
-            { label: "Notas", value: notes, onChange: setNotes, iconUri: fieldIcons.file },
+            { label: "Nombre", value: name, onChange: setName, Icon: fieldIcons.name },
+            { label: "Dosis", value: dose, onChange: setDose, Icon: fieldIcons.dosis },
+            { label: "Frecuencia", value: frequency, onChange: setFrequency, Icon: fieldIcons.clock },
+            { label: "Duración del tratamiento", value: duration, onChange: setDuration, Icon: fieldIcons.calendar },
+            { label: "Notas", value: notes, onChange: setNotes, Icon: fieldIcons.file },
           ].map((field) => (
             <View key={field.label} style={styles.fieldGroup}>
               <Text style={styles.fieldLabel}>{field.label}</Text>
               <View style={styles.fieldRow}>
                 <View style={styles.fieldIcon}>
-                  <SvgUri uri={field.iconUri} width={20} height={20} />
+                  <field.Icon width={20} height={20} />
                 </View>
                 <TextInput
                   style={styles.fieldInput}

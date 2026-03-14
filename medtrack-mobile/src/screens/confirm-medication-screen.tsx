@@ -1,6 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
-  Image,
   Platform,
   Pressable,
   SafeAreaView,
@@ -11,17 +10,23 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { SvgUri } from "react-native-svg";
 import { AppIcon } from "../components/icons/app-icon";
 import { colors } from "../theme/colors";
 
+import CalendarEditAlarm from "../assets/calendar-edit-alarm.svg";
+import ClockEditAlarm from "../assets/clock-edit-alarm.svg";
+import DosisEditAlarm from "../assets/dosis-edit-alarm.svg";
+import FileEditAlarm from "../assets/file-edit-alarm.svg";
+import NameEditAlarm from "../assets/name-edit-alarm.svg";
+import NotesConfirm from "../assets/notes-confirm.svg";
+
 const fieldIcons = {
-  name: Image.resolveAssetSource(require("../assets/name-edit-alarm.svg")).uri,
-  dosis: Image.resolveAssetSource(require("../assets/dosis-edit-alarm.svg")).uri,
-  clock: Image.resolveAssetSource(require("../assets/clock-edit-alarm.svg")).uri,
-  calendar: Image.resolveAssetSource(require("../assets/calendar-edit-alarm.svg")).uri,
-  file: Image.resolveAssetSource(require("../assets/file-edit-alarm.svg")).uri,
-  notes: Image.resolveAssetSource(require("../assets/notes-confirm.svg")).uri,
+  name: NameEditAlarm,
+  dosis: DosisEditAlarm,
+  clock: ClockEditAlarm,
+  calendar: CalendarEditAlarm,
+  file: FileEditAlarm,
+  notes: NotesConfirm,
 };
 
 const androidTopInset = Platform.OS === "android" ? (StatusBar.currentHeight ?? 0) + 12 : 0;
@@ -39,11 +44,11 @@ export function ConfirmMedicationScreen({ onBack, onConfirm }: ConfirmMedication
   const [notes, setNotes] = useState("");
 
   const fields = [
-    { label: "Nombre", value: name, onChange: setName, iconUri: fieldIcons.name, editIconUri: undefined },
-    { label: "Dosis", value: dose, onChange: setDose, iconUri: fieldIcons.dosis, editIconUri: undefined },
-    { label: "Frecuencia", value: frequency, onChange: setFrequency, iconUri: fieldIcons.clock, editIconUri: fieldIcons.notes },
-    { label: "Duración", value: duration, onChange: setDuration, iconUri: fieldIcons.calendar, editIconUri: undefined },
-    { label: "Notas", value: notes, onChange: setNotes, iconUri: fieldIcons.file, editIconUri: fieldIcons.notes },
+    { label: "Nombre", value: name, onChange: setName, Icon: fieldIcons.name, EditIcon: undefined },
+    { label: "Dosis", value: dose, onChange: setDose, Icon: fieldIcons.dosis, EditIcon: undefined },
+    { label: "Frecuencia", value: frequency, onChange: setFrequency, Icon: fieldIcons.clock, EditIcon: fieldIcons.notes },
+    { label: "Duración", value: duration, onChange: setDuration, Icon: fieldIcons.calendar, EditIcon: undefined },
+    { label: "Notas", value: notes, onChange: setNotes, Icon: fieldIcons.file, EditIcon: fieldIcons.notes },
   ];
 
   return (
@@ -69,7 +74,7 @@ export function ConfirmMedicationScreen({ onBack, onConfirm }: ConfirmMedication
               <Text style={styles.fieldLabel}>{field.label}</Text>
               <View style={styles.fieldRow}>
                 <View style={styles.fieldIcon}>
-                  <SvgUri uri={field.iconUri} width={20} height={20} />
+                  <field.Icon width={20} height={20} />
                 </View>
                 <TextInput
                   style={styles.fieldInput}
@@ -77,8 +82,8 @@ export function ConfirmMedicationScreen({ onBack, onConfirm }: ConfirmMedication
                   onChangeText={field.onChange}
                   placeholderTextColor={colors.textMuted}
                 />
-                {field.editIconUri && (
-                  <SvgUri uri={field.editIconUri} width={20} height={20} />
+                {field.EditIcon && (
+                  <field.EditIcon width={20} height={20} />
                 )}
               </View>
             </View>

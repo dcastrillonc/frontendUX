@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { SvgUri } from "react-native-svg";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { colors } from "../theme/colors";
 
-const successIcon = Image.resolveAssetSource(require("../assets/Container-positive.svg")).uri;
-const configIcon = Image.resolveAssetSource(require("../assets/gears-med.svg")).uri;
-const syncIcon = Image.resolveAssetSource(require("../assets/clock-refresh-med.svg")).uri;
+import ClockRefreshMed from "../assets/clock-refresh-med.svg";
+import ContainerPositive from "../assets/Container-positive.svg";
+import GearsMed from "../assets/gears-med.svg";
 
 const checkItems = [
   "Dosis diaria configurada",
@@ -36,7 +35,7 @@ export function MedicationRegisteredScreen({ onDone }: MedicationRegisteredScree
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <SvgUri uri={successIcon} width={100} height={100} />
+        <ContainerPositive width={100} height={100} />
 
         <Text style={styles.title}>{"Medicamento\nregistrado correctamente"}</Text>
 
@@ -47,7 +46,7 @@ export function MedicationRegisteredScreen({ onDone }: MedicationRegisteredScree
         <View style={styles.card}>
           <View style={styles.cardHeader}>
             <View style={styles.cardHeaderLeft}>
-              <SvgUri uri={configIcon} width={28} height={28} />
+              <GearsMed width={28} height={28} />
               <Text style={styles.configuringText}>Configurando...</Text>
             </View>
             <Text style={styles.percentText}>{progress}%</Text>
@@ -67,7 +66,7 @@ export function MedicationRegisteredScreen({ onDone }: MedicationRegisteredScree
           </View>
 
           <View style={styles.syncRow}>
-            <SvgUri uri={syncIcon} width={22} height={22} />
+            <ClockRefreshMed width={22} height={22} />
             <Text style={styles.syncText}>Sincronizando alarma con el calendario</Text>
           </View>
         </View>

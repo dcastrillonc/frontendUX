@@ -2050,6 +2050,28 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - RNVectorIcons (10.3.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - Yoga (0.0.0)
   - ZXingObjC/Core (3.6.9)
   - ZXingObjC/OneD (3.6.9):
@@ -2150,6 +2172,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeDependencies (from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -2340,6 +2363,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2363,7 +2388,7 @@ SPEC CHECKSUMS:
   ExpoModulesJSI: a554588f3260ee3c44a3e7f4a8151c2b9ffdb024
   EXUpdatesInterface: d48f288b92900bd95a27c6cf92a7b9aff826d49a
   FBLazyVector: 7c1d69992204c5ec452eeefa4a24b0ff311709c8
-  hermes-engine: d57b39323538c3e56690d833b40021043dcf1834
+  hermes-engine: c6c3cb5dc43588d2093cfb651c050d6afa71e528
   RCTDeprecation: dbbb85eae640e3b43cc16462d0476b00ca5959ae
   RCTRequired: 7047b18af29a76069818fd3fa0f4df423483abab
   RCTSwiftUI: 5928f7ca7e9e2f1a82d85d4c79ea3065137ad81c
@@ -2372,7 +2397,7 @@ SPEC CHECKSUMS:
   React: f6f8fc5c01e77349cdfaf49102bcb928ac31d8ed
   React-callinvoker: 3e62a849bda1522c6422309c02f5dc3210bc5359
   React-Core: 107092273c9178bb015aee2af302ed1340e59da3
-  React-Core-prebuilt: 898acf677926aecd35a3a5706f44cbea565e6a70
+  React-Core-prebuilt: 42eea4407e99dae333d49e67d91019e06ba0b51d
   React-CoreModules: 0b3b55b0b3954812ee0d67d85960bd7b42268336
   React-cxxreact: a76c6a3b36b20e777542946c20bebf67acbb631c
   React-debug: f9dda2791d3ebe2078bc6102641edab77917efb7
@@ -2433,8 +2458,9 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: ebcf3a78dc1bcdf054c9e8d309244bade6b31568
   ReactCodegen: c32ea010ee2565103b86c99f10f2861b0b1b97fe
   ReactCommon: e22f6e537e566de4c61121da2139a1980caff948
-  ReactNativeDependencies: 938563bf3eede2eafde1985f5ac8eab298018fb3
+  ReactNativeDependencies: 61253dde1d4dbbc6ef391825617f2bbaa4ddacb6
   RNSVG: 0bd149b873018bc6e0e3321e2f6435bdba294460
+  RNVectorIcons: 4351544f100d4f12cac156a7c13399e60bab3e26
   Yoga: 90687fcd1ebd927341caed917696d692813c0b24
   ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
 

@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { SvgUri } from "react-native-svg";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { colors } from "../theme/colors";
 
-const successIconUri = Image.resolveAssetSource(require("../assets/Container-positive.svg")).uri;
+import ContainerPositive from "../assets/Container-positive.svg";
 
 type AlarmUpdateSuccessScreenProps = {
   onDone: () => void;
@@ -18,7 +17,7 @@ export function AlarmUpdateSuccessScreen({ onDone }: AlarmUpdateSuccessScreenPro
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.content}>
-        <SvgUri uri={successIconUri} width={72} height={72} />
+        <ContainerPositive width={72} height={72} />
         <Text style={styles.message}>
           {"Alarma del medicamento\nactualizda correctamente"}
         </Text>
