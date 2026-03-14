@@ -5,6 +5,7 @@ import { AppIcon } from "../components/icons/app-icon";
 type PrescriptionAnalysisScreenProps = {
   activeStep: number;
   onBack: () => void;
+  onComplete?: () => void;
 };
 
 const androidTopInset = Platform.OS === "android" ? (StatusBar.currentHeight ?? 0) + 12 : 0;

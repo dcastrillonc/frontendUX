@@ -8,13 +8,14 @@ import { colors } from "../theme/colors";
 
 type ScanPrescriptionScreenProps = {
   onBack: () => void;
+  onAnalysisComplete: () => void;
 };
 
 type CaptureState = "idle" | "preview" | "loading";
 
 const androidTopInset = Platform.OS === "android" ? (StatusBar.currentHeight ?? 0) + 12 : 0;
 
-export function ScanPrescriptionScreen({ onBack }: ScanPrescriptionScreenProps) {
+export function ScanPrescriptionScreen({ onBack, onAnalysisComplete }: ScanPrescriptionScreenProps) {
   const [permission, requestPermission] = useCameraPermissions();
   const [captureState, setCaptureState] = useState<CaptureState>("idle");
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
@@ -66,12 +67,16 @@ export function ScanPrescriptionScreen({ onBack }: ScanPrescriptionScreenProps) 
       return;
     }
 
-    const timer = setInterval(() => {
+    const dotTimer = setInterval(() => {
       setLoaderStep((current) => (current + 1) % 3);
     }, 450);
+    const doneTimer = setTimeout(onAnalysisComplete, 2700);
 
-    return () => clearInterval(timer);
-  }, [captureState]);
+    return () => {
+      clearInterval(dotTimer);
+      clearTimeout(doneTimer);
+    };
+  }, [captureState, onAnalysisComplete]);
 
   const showPreview = async () => {
     if (hasCameraPermission) {
@@ -89,7 +94,7 @@ export function ScanPrescriptionScreen({ onBack }: ScanPrescriptionScreenProps) 
   };
 
   if (captureState === "loading") {
-    return <PrescriptionAnalysisScreen activeStep={loaderStep} onBack={onBack} />;
+    return <PrescriptionAnalysisScreen activeStep={loaderStep} onBack={onBack} onComplete={onAnalysisComplete} />;
   }
 
   return (
